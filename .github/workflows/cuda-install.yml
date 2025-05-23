@@ -1,0 +1,25 @@
+name: Install CUDA
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  setup-cuda:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Cuda
+        uses: Jimver/cuda-toolkit@v0.2.23
+        with:
+          cuda: '12.8.1'
+
+      - name: Verify CUDA installation
+        run: |
+          nvcc --version
+          nvidia-smi
