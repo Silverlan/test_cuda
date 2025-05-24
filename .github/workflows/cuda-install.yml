@@ -21,6 +21,8 @@ jobs:
           use-github-cache: false
           use-local-cache: true
           linux-local-args: '["--toolkit"]'
+          method: 'network'
+          sub-packages: '["nvcc"]'
 
       - name: Verify CUDA installation
         run: |
