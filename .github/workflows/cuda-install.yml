@@ -19,6 +19,8 @@ jobs:
         with:
           cuda: '12.8.1'
           use-github-cache: false
+          use-local-cache: true
+          linux-local-args: '["--toolkit"]'
 
       - name: Verify CUDA installation
         run: |
